@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+service ReviewService {
+    rpc GetReviews(ReviewRequest) returns (ReviewList);
+}
+
+message ReviewRequest {
+    string hotel_id = 1;
+}
+
+message Review {
+    string user_id = 1;
+    string hotel_id = 2;
+    int32 rating = 3;
+    string comment = 4;
+}
+
+message ReviewList {
+    repeated Review reviews = 1;
+}
