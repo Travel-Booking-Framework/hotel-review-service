@@ -5,3 +5,8 @@ class ReviewSerializer(serializers.ModelSerializer):
     class Meta:
         model = Review
         fields = '__all__'
+
+    def validate(self, data):
+    # Custom validation logic
+    # Raise serializers.ValidationError if validation fails
+        return data
